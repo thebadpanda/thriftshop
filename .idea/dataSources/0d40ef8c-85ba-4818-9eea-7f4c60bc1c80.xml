@@ -2,360 +2,229 @@
 <dataSource name="shop@127.0.0.1">
   <database-model serializer="dbm" rdbms="MYSQL" format-version="4.2">
     <root id="1"/>
-    <schema id="2" parent="1" name="shop">
+    <schema id="2" parent="1" name="information_schema"/>
+    <schema id="3" parent="1" name="mydbtest"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="sys"/>
+    <schema id="7" parent="1" name="SHOP">
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
-    <schema id="3" parent="1" name="information_schema"/>
-    <schema id="4" parent="1" name="mydbtest"/>
-    <schema id="5" parent="1" name="mysql"/>
-    <schema id="6" parent="1" name="performance_schema"/>
-    <schema id="7" parent="1" name="sys"/>
-    <table id="8" parent="2" name="category"/>
-    <table id="9" parent="2" name="category_name_of_specification_digital"/>
-    <table id="10" parent="2" name="category_name_of_specification_string"/>
-    <table id="11" parent="2" name="item"/>
-    <table id="12" parent="2" name="item_specification_digital"/>
-    <table id="13" parent="2" name="item_specification_string"/>
-    <table id="14" parent="2" name="measuring_system"/>
-    <table id="15" parent="2" name="measuring_system_item"/>
-    <table id="16" parent="2" name="measuring_system_specification_digital"/>
-    <table id="17" parent="2" name="name_of_specification_digital"/>
-    <table id="18" parent="2" name="name_of_specification_string"/>
-    <table id="19" parent="2" name="producer"/>
-    <table id="20" parent="2" name="specification_digital"/>
-    <table id="21" parent="2" name="specification_string"/>
-    <column id="22" parent="8" name="id">
+    <schema id="8" parent="1" name="schema"/>
+    <table id="9" parent="7" name="basket"/>
+    <table id="10" parent="7" name="category"/>
+    <table id="11" parent="7" name="color"/>
+    <table id="12" parent="7" name="item"/>
+    <table id="13" parent="7" name="size"/>
+    <table id="14" parent="7" name="subcategory"/>
+    <table id="15" parent="7" name="users"/>
+    <table id="16" parent="7" name="weight"/>
+    <column id="17" parent="9" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="23" parent="8" name="_name">
+    <column id="18" parent="9" name="user_id">
       <Position>2</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>int(11)|0</DataType>
     </column>
-    <key id="24" parent="8" name="PRIMARY">
+    <column id="19" parent="9" name="item_id">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="20" parent="9" name="FK_bas_users">
+      <ColNames>user_id</ColNames>
+    </index>
+    <index id="21" parent="9" name="FK_bas_items">
+      <ColNames>item_id</ColNames>
+    </index>
+    <key id="22" parent="9" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="25" parent="9" name="id_category">
-      <Position>1</Position>
-      <DataType>int(11)|0</DataType>
-    </column>
-    <column id="26" parent="9" name="id_name_of_specification_digital">
-      <Position>2</Position>
-      <DataType>int(11)|0</DataType>
-    </column>
-    <index id="27" parent="9" name="FK_category_9">
-      <ColNames>id_category</ColNames>
-    </index>
-    <index id="28" parent="9" name="FK_name_of_specification_digital_10">
-      <ColNames>id_name_of_specification_digital</ColNames>
-    </index>
-    <foreign-key id="29" parent="9" name="FK_category_9">
-      <ColNames>id_category</ColNames>
+    <foreign-key id="23" parent="9" name="FK_bas_users">
+      <ColNames>user_id</ColNames>
       <RefSchemaName>shop</RefSchemaName>
-      <RefTableName>category</RefTableName>
+      <RefTableName>users</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="30" parent="9" name="FK_name_of_specification_digital_10">
-      <ColNames>id_name_of_specification_digital</ColNames>
+    <foreign-key id="24" parent="9" name="FK_bas_items">
+      <ColNames>item_id</ColNames>
       <RefSchemaName>shop</RefSchemaName>
-      <RefTableName>name_of_specification_digital</RefTableName>
+      <RefTableName>item</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="31" parent="10" name="id_category">
-      <Position>1</Position>
-      <DataType>int(11)|0</DataType>
-    </column>
-    <column id="32" parent="10" name="id_name_of_specification_string">
-      <Position>2</Position>
-      <DataType>int(11)|0</DataType>
-    </column>
-    <index id="33" parent="10" name="FK_category_7">
-      <ColNames>id_category</ColNames>
-    </index>
-    <index id="34" parent="10" name="FK_name_of_specification_string_8">
-      <ColNames>id_name_of_specification_string</ColNames>
-    </index>
-    <foreign-key id="35" parent="10" name="FK_category_7">
-      <ColNames>id_category</ColNames>
-      <RefSchemaName>shop</RefSchemaName>
-      <RefTableName>category</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <foreign-key id="36" parent="10" name="FK_name_of_specification_string_8">
-      <ColNames>id_name_of_specification_string</ColNames>
-      <RefSchemaName>shop</RefSchemaName>
-      <RefTableName>name_of_specification_string</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <column id="37" parent="11" name="id">
+    <column id="25" parent="10" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="38" parent="11" name="_name">
+    <column id="26" parent="10" name="category_name">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <column id="39" parent="11" name="price">
-      <Position>3</Position>
-      <DataType>decimal(18,2)|0</DataType>
+    <key id="27" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="28" parent="11" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="40" parent="11" name="id_producer">
-      <Position>4</Position>
+    <column id="29" parent="11" name="color_name">
+      <Position>2</Position>
+      <DataType>varchar(40)|0</DataType>
+    </column>
+    <key id="30" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="31" parent="12" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="32" parent="12" name="item_name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="33" parent="12" name="subcategory_id">
+      <Position>3</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="41" parent="11" name="id_category">
+    <column id="34" parent="12" name="weight">
+      <Position>4</Position>
+      <DataType>decimal(18,3)|0</DataType>
+    </column>
+    <column id="35" parent="12" name="color_id">
       <Position>5</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <index id="42" parent="11" name="FK_category_12">
-      <ColNames>id_category</ColNames>
+    <column id="36" parent="12" name="size_id">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="37" parent="12" name="FK_item_color">
+      <ColNames>color_id</ColNames>
     </index>
-    <index id="43" parent="11" name="FK_producer_11">
-      <ColNames>id_producer</ColNames>
+    <index id="38" parent="12" name="FK_item_scat">
+      <ColNames>subcategory_id</ColNames>
     </index>
-    <key id="44" parent="11" name="PRIMARY">
+    <index id="39" parent="12" name="FK_item_size">
+      <ColNames>size_id</ColNames>
+    </index>
+    <key id="40" parent="12" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="45" parent="11" name="FK_producer_11">
-      <ColNames>id_producer</ColNames>
+    <foreign-key id="41" parent="12" name="FK_item_scat">
+      <ColNames>subcategory_id</ColNames>
       <RefSchemaName>shop</RefSchemaName>
-      <RefTableName>producer</RefTableName>
+      <RefTableName>subcategory</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="46" parent="11" name="FK_category_12">
-      <ColNames>id_category</ColNames>
+    <foreign-key id="42" parent="12" name="FK_item_color">
+      <ColNames>color_id</ColNames>
+      <RefSchemaName>shop</RefSchemaName>
+      <RefTableName>color</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="43" parent="12" name="FK_item_size">
+      <ColNames>size_id</ColNames>
+      <RefSchemaName>shop</RefSchemaName>
+      <RefTableName>size</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="44" parent="13" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="45" parent="13" name="size_value">
+      <Position>2</Position>
+      <DataType>varchar(5)|0</DataType>
+    </column>
+    <key id="46" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="47" parent="14" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="48" parent="14" name="subcategory_name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="49" parent="14" name="category_id">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="50" parent="14" name="FK_sub_cat">
+      <ColNames>category_id</ColNames>
+    </index>
+    <key id="51" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="52" parent="14" name="FK_sub_cat">
+      <ColNames>category_id</ColNames>
       <RefSchemaName>shop</RefSchemaName>
       <RefTableName>category</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="47" parent="12" name="id_item">
-      <Position>1</Position>
-      <DataType>int(11)|0</DataType>
-    </column>
-    <column id="48" parent="12" name="id_specification_digital">
-      <Position>2</Position>
-      <DataType>int(11)|0</DataType>
-    </column>
-    <index id="49" parent="12" name="FK_item_15">
-      <ColNames>id_item</ColNames>
-    </index>
-    <index id="50" parent="12" name="FK_specification_digital_16">
-      <ColNames>id_specification_digital</ColNames>
-    </index>
-    <foreign-key id="51" parent="12" name="FK_item_15">
-      <ColNames>id_item</ColNames>
-      <RefSchemaName>shop</RefSchemaName>
-      <RefTableName>item</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <foreign-key id="52" parent="12" name="FK_specification_digital_16">
-      <ColNames>id_specification_digital</ColNames>
-      <RefSchemaName>shop</RefSchemaName>
-      <RefTableName>specification_digital</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <column id="53" parent="13" name="id_item">
-      <Position>1</Position>
-      <DataType>int(11)|0</DataType>
-    </column>
-    <column id="54" parent="13" name="id_specification_string">
-      <Position>2</Position>
-      <DataType>int(11)|0</DataType>
-    </column>
-    <index id="55" parent="13" name="FK_item_13">
-      <ColNames>id_item</ColNames>
-    </index>
-    <index id="56" parent="13" name="FK_specification_string_14">
-      <ColNames>id_specification_string</ColNames>
-    </index>
-    <foreign-key id="57" parent="13" name="FK_item_13">
-      <ColNames>id_item</ColNames>
-      <RefSchemaName>shop</RefSchemaName>
-      <RefTableName>item</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <foreign-key id="58" parent="13" name="FK_specification_string_14">
-      <ColNames>id_specification_string</ColNames>
-      <RefSchemaName>shop</RefSchemaName>
-      <RefTableName>specification_string</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <column id="59" parent="14" name="id">
+    <column id="53" parent="15" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="60" parent="14" name="_name">
+    <column id="54" parent="15" name="_login">
       <Position>2</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>varchar(20)|0</DataType>
     </column>
-    <key id="61" parent="14" name="PRIMARY">
+    <column id="55" parent="15" name="_password">
+      <Position>3</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="56" parent="15" name="_email">
+      <Position>4</Position>
+      <DataType>varchar(55)|0</DataType>
+    </column>
+    <key id="57" parent="15" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="62" parent="15" name="id_measuring_system">
-      <Position>1</Position>
-      <DataType>int(11)|0</DataType>
-    </column>
-    <column id="63" parent="15" name="id_item">
-      <Position>2</Position>
-      <DataType>int(11)|0</DataType>
-    </column>
-    <index id="64" parent="15" name="FK_item_2">
-      <ColNames>id_item</ColNames>
-    </index>
-    <index id="65" parent="15" name="FK_measuring_system_1">
-      <ColNames>id_measuring_system</ColNames>
-    </index>
-    <foreign-key id="66" parent="15" name="FK_measuring_system_1">
-      <ColNames>id_measuring_system</ColNames>
-      <RefSchemaName>shop</RefSchemaName>
-      <RefTableName>measuring_system</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <foreign-key id="67" parent="15" name="FK_item_2">
-      <ColNames>id_item</ColNames>
-      <RefSchemaName>shop</RefSchemaName>
-      <RefTableName>item</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <column id="68" parent="16" name="id_measuring_system">
-      <Position>1</Position>
-      <DataType>int(11)|0</DataType>
-    </column>
-    <column id="69" parent="16" name="id_specification_digital">
-      <Position>2</Position>
-      <DataType>int(11)|0</DataType>
-    </column>
-    <index id="70" parent="16" name="FK_measuring_system_3">
-      <ColNames>id_measuring_system</ColNames>
-    </index>
-    <index id="71" parent="16" name="FK_specification_digital_4">
-      <ColNames>id_specification_digital</ColNames>
-    </index>
-    <foreign-key id="72" parent="16" name="FK_measuring_system_3">
-      <ColNames>id_measuring_system</ColNames>
-      <RefSchemaName>shop</RefSchemaName>
-      <RefTableName>measuring_system</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <foreign-key id="73" parent="16" name="FK_specification_digital_4">
-      <ColNames>id_specification_digital</ColNames>
-      <RefSchemaName>shop</RefSchemaName>
-      <RefTableName>specification_digital</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <column id="74" parent="17" name="id">
+    <column id="58" parent="16" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="75" parent="17" name="_name">
-      <Position>2</Position>
-      <DataType>varchar(255)|0</DataType>
-    </column>
-    <key id="76" parent="17" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="77" parent="18" name="id">
-      <Position>1</Position>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-    </column>
-    <column id="78" parent="18" name="_name">
-      <Position>2</Position>
-      <DataType>varchar(255)|0</DataType>
-    </column>
-    <key id="79" parent="18" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="80" parent="19" name="id">
-      <Position>1</Position>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-    </column>
-    <column id="81" parent="19" name="_name">
-      <Position>2</Position>
-      <DataType>varchar(255)|0</DataType>
-    </column>
-    <key id="82" parent="19" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="83" parent="20" name="id">
-      <Position>1</Position>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-    </column>
-    <column id="84" parent="20" name="_value">
+    <column id="59" parent="16" name="price_per_kg">
       <Position>2</Position>
       <DataType>decimal(18,2)|0</DataType>
     </column>
-    <column id="85" parent="20" name="id_name_of_specification_digital">
-      <Position>3</Position>
-      <DataType>int(11)|0</DataType>
-    </column>
-    <index id="86" parent="20" name="FK_name_of_specification_digital_6">
-      <ColNames>id_name_of_specification_digital</ColNames>
-    </index>
-    <key id="87" parent="20" name="PRIMARY">
+    <key id="60" parent="16" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="88" parent="20" name="FK_name_of_specification_digital_6">
-      <ColNames>id_name_of_specification_digital</ColNames>
-      <RefSchemaName>shop</RefSchemaName>
-      <RefTableName>name_of_specification_digital</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
-    <column id="89" parent="21" name="id">
-      <Position>1</Position>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-    </column>
-    <column id="90" parent="21" name="_name">
-      <Position>2</Position>
-      <DataType>varchar(255)|0</DataType>
-    </column>
-    <column id="91" parent="21" name="id_name_of_specification_string">
-      <Position>3</Position>
-      <DataType>int(11)|0</DataType>
-    </column>
-    <index id="92" parent="21" name="FK_name_of_specification_string_5">
-      <ColNames>id_name_of_specification_string</ColNames>
-    </index>
-    <key id="93" parent="21" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="94" parent="21" name="FK_name_of_specification_string_5">
-      <ColNames>id_name_of_specification_string</ColNames>
-      <RefSchemaName>shop</RefSchemaName>
-      <RefTableName>name_of_specification_string</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
   </database-model>
 </dataSource>

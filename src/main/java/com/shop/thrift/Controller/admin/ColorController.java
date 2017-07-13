@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 public class ColorController {
 
     @Autowired
-    ColorService colorService;
+    private ColorService colorService;
 
     @ModelAttribute
     public Color getColor(){

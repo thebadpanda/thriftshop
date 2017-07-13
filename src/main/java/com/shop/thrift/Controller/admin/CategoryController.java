@@ -21,7 +21,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 public class CategoryController {
 
     @Autowired
-    CategoryService categoryService;
+    private CategoryService categoryService;
 
     @ModelAttribute("category")
     public Category getCategory(){
@@ -54,7 +54,4 @@ public class CategoryController {
         status.setComplete();
         return "redirect:/admin/category";
     }
-
-
-
 }

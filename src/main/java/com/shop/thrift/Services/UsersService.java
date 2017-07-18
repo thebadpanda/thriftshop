@@ -12,6 +12,8 @@ public interface UsersService {
 
     void save(Users users);
 
+    Users findOne(int id);
+
    // void update(Users users);
 
 

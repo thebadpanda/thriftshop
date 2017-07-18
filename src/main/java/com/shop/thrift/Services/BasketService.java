@@ -12,6 +12,8 @@ public interface BasketService{
 
     void save(Basket basket);
 
+    Basket findOne(int id);
+
 
 
 }

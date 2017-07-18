@@ -3,6 +3,8 @@ import com.shop.thrift.Entity.Category;
 import com.shop.thrift.Repository.CategoryRepository;
 import com.shop.thrift.Services.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -36,6 +38,16 @@ public class CategoryServiceImpl implements CategoryService{
     @Override
     public Category category(int id){
         return categoryRepository.category(id);
+    }
+
+    @Override
+    public Category findOne(String name) {
+        return categoryRepository.findByName(name);
+    }
+
+    @Override
+    public Page<Category> findAll(Pageable pageable) {
+        return categoryRepository.findAll(pageable);
     }
 
 }

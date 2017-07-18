@@ -9,4 +9,6 @@ public interface CategoryRepository extends JpaRepository<Category, Integer>{
 
     @Query("SELECT DISTINCT c FROM Category c LEFT JOIN FETCH c.subcategories WHERE c.id = :id")
     Category category(@Param("id")int id);
+
+    Category findByName(String name);
 }

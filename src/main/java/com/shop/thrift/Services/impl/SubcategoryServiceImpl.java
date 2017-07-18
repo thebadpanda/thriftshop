@@ -5,6 +5,8 @@ import com.shop.thrift.Repository.CategoryRepository;
 import com.shop.thrift.Repository.SubcategoryRepository;
 import com.shop.thrift.Services.SubcategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -31,5 +33,20 @@ public class SubcategoryServiceImpl implements SubcategoryService {
     @Override
     public void save(Subcategory subcategory){
         subcategoryRepository.save(subcategory);
+    }
+
+    @Override
+    public Subcategory findOne(String name){
+       return subcategoryRepository.findByName(name);
+    }
+
+    @Override
+    public Subcategory findOne(int id){
+        return subcategoryRepository.findOne(id);
+    }
+
+    @Override
+    public Page<Subcategory> findAll(Pageable pageable){
+        return subcategoryRepository.findAll(pageable);
     }
 }

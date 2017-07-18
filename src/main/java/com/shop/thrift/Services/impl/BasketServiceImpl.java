@@ -31,6 +31,11 @@ public class BasketServiceImpl implements BasketService{
         basketRepository.save(basket);
     }
 
+    @Override
+    public Basket findOne(int id){
+       return basketRepository.findOne(id);
+    }
+
 
 
 }

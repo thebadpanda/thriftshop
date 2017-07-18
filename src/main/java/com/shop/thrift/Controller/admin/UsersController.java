@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
+
 @Controller
 @RequestMapping("/admin/users")
 @SessionAttributes(names="users")
@@ -25,7 +27,8 @@ public class UsersController {
         return new Users();
     }
 
-    @RequestMapping("admin/users/show")
+    @RequestMapping
+//            ("admin/users/show")
     public String show(Model model){
         model.addAttribute("users-show", usersService.findAll());
         return "admin-users";
@@ -37,8 +40,8 @@ public class UsersController {
         return "redirect:/admin/users";
     }
 
-    @RequestMapping("/admin/users/save")
-    public String save(@ModelAttribute("users-save") Users users, SessionStatus status){
+    @RequestMapping(method=POST)
+    public String save(@ModelAttribute("users") Users users, SessionStatus status){
         usersService.save(users);
         status.setComplete();
         return "redirect:/admin/users/";

@@ -19,6 +19,11 @@ public class SizeServiceImpl implements SizeService {
         return sizeRepository.findAll();
     }
 
+    @Override
+    public Size findOne(int id){
+        return sizeRepository.findOne(id);
+    }
+
 
 
 }

@@ -29,6 +29,11 @@ public class UsersServiceImpl implements UsersService{
         usersRepository.save(users);
     }
 
+    @Override
+    public Users findOne(int id){
+        return usersRepository.findOne(id);
+    }
+
 //    @Override
 //    public void update(Users users){
 //        usersRepository.update(users);

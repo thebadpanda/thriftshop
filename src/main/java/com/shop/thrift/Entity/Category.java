@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="category")
+@Table(name="category", indexes=@Index(columnList = "category_name"))
 
 public class Category {
     @Id
@@ -48,6 +48,20 @@ public class Category {
 
     public Subcategory getSubCategory(int index){
         return subcategories.get(index);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (!(obj instanceof Category))
+            return false;
+        Category other = (Category) obj;
+        if (id != other.id)
+            return false;
+        return true;
     }
 
 }

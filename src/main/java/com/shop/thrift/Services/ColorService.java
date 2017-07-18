@@ -8,4 +8,6 @@ public interface ColorService {
 
     List<Color> findAll();
 
+    Color findOne(int id);
+
 }

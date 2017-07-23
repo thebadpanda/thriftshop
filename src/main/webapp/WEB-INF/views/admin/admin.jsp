@@ -19,6 +19,7 @@
                     <li><a href="/admin/item">Item</a></li>
                     <li><a href="/admin/users">Users</a></li>
                     <li><a href="/admin/weight">Weight</a></li>
+                    <li><a href="admin/login">Login</a></li>
                 </ul>
             </div>
         </div>

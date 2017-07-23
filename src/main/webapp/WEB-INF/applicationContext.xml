@@ -48,7 +48,6 @@
           p:user="${db.username}" p:password="${db.password}" p:minPoolSize="5"
           p:maxPoolSize="10" p:maxIdleTime="200">
     </bean>
-
     <bean id="entityManagerFactory"
           class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="packagesToScan" value="com.shop.thrift.Entity"/>
@@ -75,4 +74,5 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>
+    <import resource="security.xml"/>
 </beans>

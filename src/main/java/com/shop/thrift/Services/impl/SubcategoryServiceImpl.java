@@ -1,9 +1,11 @@
 package com.shop.thrift.Services.impl;
 
 import com.shop.thrift.Entity.Subcategory;
+import com.shop.thrift.Filter.BasicFilter;
 import com.shop.thrift.Repository.CategoryRepository;
 import com.shop.thrift.Repository.SubcategoryRepository;
 import com.shop.thrift.Services.SubcategoryService;
+import com.shop.thrift.Specification.SubcategorySpecification;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -46,7 +48,7 @@ public class SubcategoryServiceImpl implements SubcategoryService {
     }
 
     @Override
-    public Page<Subcategory> findAll(Pageable pageable){
-        return subcategoryRepository.findAll(pageable);
+    public Page<Subcategory> findAll(BasicFilter filter, Pageable pageable){
+        return subcategoryRepository.findAll(new SubcategorySpecification(filter),pageable);
     }
 }

@@ -1,6 +1,7 @@
 package com.shop.thrift.Services;
 
 import com.shop.thrift.Entity.Category;
+import com.shop.thrift.Filter.BasicFilter;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -14,7 +15,7 @@ public interface CategoryService {
     void save(Category category);
     Category category (int id);
     Category findOne(String name);
-    Page<Category> findAll(Pageable pageable);
+    Page<Category> findAll(BasicFilter filter, Pageable pageable);
 
 
 

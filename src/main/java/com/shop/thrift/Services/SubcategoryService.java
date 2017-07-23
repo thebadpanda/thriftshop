@@ -1,6 +1,7 @@
 package com.shop.thrift.Services;
 
 import com.shop.thrift.Entity.Subcategory;
+import com.shop.thrift.Filter.BasicFilter;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -18,7 +19,7 @@ public interface SubcategoryService {
 
     Subcategory findOne(int id);
 
-    Page<Subcategory> findAll(Pageable pageable);
+    Page<Subcategory> findAll(BasicFilter filter, Pageable pageable);
 
 
 

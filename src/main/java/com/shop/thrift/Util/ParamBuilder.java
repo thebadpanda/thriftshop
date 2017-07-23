@@ -1,12 +1,13 @@
 package com.shop.thrift.Util;
 
+import com.shop.thrift.Filter.BasicFilter;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 
 public interface ParamBuilder {
 
-    public static String getParams(Pageable pageable){
+    public static String getParams(Pageable pageable, BasicFilter filter){
         StringBuilder buffer = new StringBuilder();
         buffer.append("?page=");
         buffer.append(String.valueOf(pageable.getPageNumber()+1));
@@ -21,6 +22,8 @@ public interface ParamBuilder {
                     buffer.append(",desc");
             });
         }
+        buffer.append("&search=");
+        buffer.append(filter.getSearch());
         return buffer.toString();
     }
 }

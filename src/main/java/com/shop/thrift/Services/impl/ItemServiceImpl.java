@@ -1,12 +1,14 @@
 package com.shop.thrift.Services.impl;
 
 import com.shop.thrift.Entity.Item;
+import com.shop.thrift.Filter.ItemFilter;
 import com.shop.thrift.Form.ItemForm;
 import com.shop.thrift.Repository.ColorRepository;
 import com.shop.thrift.Repository.ItemRepository;
 import com.shop.thrift.Repository.SizeRepository;
 import com.shop.thrift.Repository.SubcategoryRepository;
 import com.shop.thrift.Services.ItemService;
+import com.shop.thrift.Specification.ItemSpecification;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -62,8 +64,11 @@ public class ItemServiceImpl implements ItemService {
     }
 
     @Override
-    public Page<Item> findAll(Pageable pageable) {
-        return itemRepository.findAll(pageable);
+    public Page<Item> findAll(ItemFilter filter, Pageable pageable) {
+        System.out.println("---------------------------------------------------------------");
+        Page<Item> items = itemRepository.findAll(new ItemSpecification(filter),pageable);
+        System.out.println("---------------------------------------------------------------");
+        return items;
     }
 
 

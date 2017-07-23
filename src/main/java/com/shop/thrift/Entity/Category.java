@@ -42,11 +42,11 @@ public class Category {
                 System.out.println(subcategories.get(i).getName());
             }
         }else{
-            System.out.println("Sub cat list is empty :(");
+            System.out.println("Subcatlist is empty :(");
         }
     }
 
-    public Subcategory getSubCategory(int index){
+    public Subcategory getSubcategory(int index){
         return subcategories.get(index);
     }
 

@@ -1,7 +1,7 @@
 package com.shop.thrift.Services;
 
 import com.shop.thrift.Entity.Category;
-import com.shop.thrift.Filter.BasicFilter;
+import com.shop.thrift.dto.Filter.BasicFilter;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

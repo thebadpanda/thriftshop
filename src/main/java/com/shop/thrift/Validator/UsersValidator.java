@@ -16,8 +16,8 @@ public class UsersValidator implements Validator {
 
     private final UsersService usersService;
 
-    public UsersValidator(UsersService userService) {
-        this.usersService = userService;
+    public UsersValidator(UsersService usersService) {
+        this.usersService = usersService;
     }
 
 //	^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$

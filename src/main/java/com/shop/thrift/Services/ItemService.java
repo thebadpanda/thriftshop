@@ -1,9 +1,8 @@
 package com.shop.thrift.Services;
 
 import com.shop.thrift.Entity.Item;
-import com.shop.thrift.Filter.BasicFilter;
-import com.shop.thrift.Filter.ItemFilter;
-import com.shop.thrift.Form.ItemForm;
+import com.shop.thrift.dto.Filter.ItemFilter;
+import com.shop.thrift.dto.Form.ItemForm;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -20,6 +19,10 @@ public interface ItemService {
     Item findOne(int id);
 
     Page<Item> findAll(ItemFilter filter, Pageable pageable);
+
+    int findCount(int id);
+
+    List<Item> findByUsersId(int usersId);
 
 
 

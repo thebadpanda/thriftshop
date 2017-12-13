@@ -1,4 +1,4 @@
-package com.shop.thrift.Filter;
+package com.shop.thrift.dto.Filter;
 
 public class BasicFilter {
 

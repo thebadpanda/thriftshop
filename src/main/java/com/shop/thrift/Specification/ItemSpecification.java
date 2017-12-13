@@ -5,13 +5,12 @@ import java.util.List;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Join;
 import javax.persistence.criteria.JoinType;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
 import com.shop.thrift.Entity.Item;
-import com.shop.thrift.Filter.ItemFilter;
+import com.shop.thrift.dto.Filter.ItemFilter;
 import org.springframework.data.jpa.domain.Specification;
 
 public class ItemSpecification implements Specification<Item>{

@@ -16,4 +16,13 @@ public interface ItemRepository extends JpaRepository<Item, Integer>, JpaSpecifi
            countQuery="SELECT count(i.id) FROM Item i")
 
    Page<Item> findAll(Pageable pageable);
+
+   @Query("SELECT b.count FROM Users u JOIN u.basket b WHERE u.id=?1")
+   Integer findCount(int id);
+
+   @Query("SELECT i FROM Item i JOIN i.basket b JOIN b.users u WHERE u.id=?1")
+   List<Item> findByUsersId(int usersId);
+
+   @Query("SELECT i FROM Item i JOIN i.subcategory sc WHERE sc.id = ?1")
+   List<Item> findBySubcategoryId(int id);
 }

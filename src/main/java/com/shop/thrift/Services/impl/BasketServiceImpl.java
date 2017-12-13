@@ -1,6 +1,7 @@
 package com.shop.thrift.Services.impl;
 
 import com.shop.thrift.Entity.Basket;
+import com.shop.thrift.Entity.Item;
 import com.shop.thrift.Repository.BasketRepository;
 import com.shop.thrift.Services.BasketService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +11,6 @@ import java.util.List;
 
 
 @Service
-
 public class BasketServiceImpl implements BasketService{
 
     @Autowired
@@ -20,6 +20,13 @@ public class BasketServiceImpl implements BasketService{
     public List<Basket> findAll(){
         return basketRepository.findAll();
     }
+
+
+    // Item --> Basket
+//    @Override
+//    public List<Item> findByUsersId(int usersId) {
+//        return basketRepository.findByUsersId(usersId);
+//    }
 
     @Override
     public void delete(int id){
@@ -36,6 +43,13 @@ public class BasketServiceImpl implements BasketService{
        return basketRepository.findOne(id);
     }
 
+//    @Override
+//    public List<Basket> findBasketByUsers(int user_id) {
+//        return basketRepository.findBasketByUsers(user_id);
+//    }
 
-
+    //    @Override
+//    public void add(int id) {
+//        basketRepository.add(id);
+//    }
 }

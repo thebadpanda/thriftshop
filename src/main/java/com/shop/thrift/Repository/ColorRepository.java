@@ -11,4 +11,7 @@ public interface ColorRepository extends JpaRepository<Color, Integer>, JpaSpeci
     //Color findByColorName(@Param("name")String name);
 
    Color findByColorName(String name);
+
+    @Query("SELECT i FROM Color i LEFT JOIN FETCH i.items WHERE i.id = ?1")
+    Color findOneByItem(int id);
 }

@@ -12,10 +12,11 @@ public interface SubcategoryRepository extends JpaRepository<Subcategory, Intege
     @Query("SELECT sc FROM Subcategory sc LEFT JOIN FETCH sc.category")
     List<Subcategory> findAll();
 
-
-    //АРСЕН ТУТ МОЖЕ БУТИ ПОМИЛКА -макс
     @Query("SELECT sc FROM Subcategory sc LEFT JOIN FETCH sc.category WHERE sc.id=:id")
     Subcategory subcategory (@Param("id")int id);
 
     Subcategory findByName(String name);
+
+    @Query("SELECT i FROM Subcategory i LEFT JOIN FETCH i.items WHERE i.id = ?1")
+    Subcategory findOneByItem(int id);
 }

@@ -3,7 +3,7 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container-fluid">
         <div class="navbar-header">
-            <h2>Header</h2>
+            <h2>Thrift Shop</h2>
         </div>
         <ul class="nav navbar-nav">
             <!--       	<li><a>Home</a></li> -->

@@ -3,7 +3,7 @@
 <footer class="navbar navbar-default navbar-fixed-bottom">
     <div class="container-fluid">
         <div class="row text-center">
-            <h2>Footer</h2>
+            <h2>Всі права захищені(c) 2017</h2>
         </div>
     </div>
 </footer>

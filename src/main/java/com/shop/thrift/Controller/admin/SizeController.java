@@ -1,7 +1,7 @@
 package com.shop.thrift.Controller.admin;
 
 import com.shop.thrift.Entity.Size;
-import com.shop.thrift.Filter.BasicFilter;
+import com.shop.thrift.dto.Filter.BasicFilter;
 import com.shop.thrift.Services.SizeService;
 import com.shop.thrift.Validator.SizeValidator;
 import org.springframework.beans.factory.annotation.Autowired;

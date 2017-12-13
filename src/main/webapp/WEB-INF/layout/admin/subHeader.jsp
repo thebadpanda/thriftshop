@@ -2,6 +2,6 @@
          pageEncoding="UTF-8"%>
 <div class="container-fluid">
     <div class="row">
-        <h3>Sub Header</h3>
+        <h3>This page is only for admin</h3>
     </div>
 </div>

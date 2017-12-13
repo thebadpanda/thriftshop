@@ -1,6 +1,6 @@
 package com.shop.thrift.Services.impl;
 import com.shop.thrift.Entity.Category;
-import com.shop.thrift.Filter.BasicFilter;
+import com.shop.thrift.dto.Filter.BasicFilter;
 import com.shop.thrift.Repository.CategoryRepository;
 import com.shop.thrift.Services.CategoryService;
 import com.shop.thrift.Specification.CategorySpecification;
@@ -51,5 +51,4 @@ public class CategoryServiceImpl implements CategoryService{
     public Page<Category> findAll(BasicFilter filter, Pageable pageable) {
         return categoryRepository.findAll(new CategorySpecification(filter), pageable);
     }
-
 }

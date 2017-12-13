@@ -1,7 +1,7 @@
 package com.shop.thrift.Specification;
 
 import com.shop.thrift.Entity.Size;
-import com.shop.thrift.Filter.BasicFilter;
+import com.shop.thrift.dto.Filter.BasicFilter;
 
 import org.springframework.data.jpa.domain.Specification;
 

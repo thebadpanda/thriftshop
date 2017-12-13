@@ -1,14 +1,23 @@
 package com.shop.thrift.Entity;
 
-import org.springframework.security.core.userdetails.UserDetails;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Index;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
-
-import javax.persistence.*;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
 @Table(name = "users", indexes=@Index(columnList = "user_name"))
@@ -32,15 +41,18 @@ public class Users implements UserDetails{
     @Column(name="_role")
     private Role role;
 
-    @OneToMany(mappedBy = "users")
-    private List<Basket> basketList = new ArrayList<>();
+    @ManyToOne(fetch=FetchType.LAZY)
+    private Basket basket;
 
-    public List<Basket> getBasketList() {
-        return basketList;
+//    @OneToMany(mappedBy = "users")
+//    private Basket basket;
+
+    public Basket getBasket() {
+        return basket;
     }
 
-    public void setBasketList(List<Basket> basketList) {
-        this.basketList = basketList;
+    public void setBasket(Basket basket) {
+        this.basket = basket;
     }
 
     public Role getRole() {
@@ -86,9 +98,7 @@ public class Users implements UserDetails{
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        List<SimpleGrantedAuthority> list = new ArrayList<>();
-        list.add(new SimpleGrantedAuthority(role.name()));
-        return list;
+        return new ArrayList<>(Arrays.asList(new SimpleGrantedAuthority(role.name())));
     }
 
     @Override

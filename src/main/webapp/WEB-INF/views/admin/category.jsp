@@ -14,6 +14,7 @@
             </button>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
+                    <li><a href="/">Main</a> </li>
                     <li class="active"><a href="/admin/category">Category</a><span
                             class="sr-only">(current)</span></li>
                     <li><a href="/admin/subcategory">Subcategory</a></li>

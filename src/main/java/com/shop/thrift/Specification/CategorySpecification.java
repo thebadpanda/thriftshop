@@ -2,7 +2,7 @@ package com.shop.thrift.Specification;
 
 
 import com.shop.thrift.Entity.Category;
-import com.shop.thrift.Filter.BasicFilter;
+import com.shop.thrift.dto.Filter.BasicFilter;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;

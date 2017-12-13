@@ -11,15 +11,16 @@
             </button>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
+                    <li><a href="/">Main</a> </li>
                     <li><a href="/admin/category">Category</a></li>
-                    <li><a href="/admin/basket">Basket</a></li>
                     <li><a href="/admin/subcategory">Subcategory</a></li>
                     <li><a href="/admin/color">Color</a></li>
                     <li><a href="/admin/size">Size</a></li>
                     <li><a href="/admin/item">Item</a></li>
                     <li><a href="/admin/users">Users</a></li>
                     <li><a href="/admin/weight">Weight</a></li>
-                    <li><a href="admin/login">Login</a></li>
+                    <li><a href="/admin/login">Login</a></li>
+                    <li><a href="/users/basket">Basket</a></li>
                 </ul>
             </div>
         </div>

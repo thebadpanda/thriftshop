@@ -1,7 +1,7 @@
 package com.shop.thrift.Services.impl;
 
 import com.shop.thrift.Entity.Subcategory;
-import com.shop.thrift.Filter.BasicFilter;
+import com.shop.thrift.dto.Filter.BasicFilter;
 import com.shop.thrift.Repository.CategoryRepository;
 import com.shop.thrift.Repository.SubcategoryRepository;
 import com.shop.thrift.Services.SubcategoryService;
@@ -50,5 +50,10 @@ public class SubcategoryServiceImpl implements SubcategoryService {
     @Override
     public Page<Subcategory> findAll(BasicFilter filter, Pageable pageable){
         return subcategoryRepository.findAll(new SubcategorySpecification(filter),pageable);
+    }
+
+    @Override
+    public Subcategory findOneByItem(int id) {
+        return subcategoryRepository.findOneByItem(id);
     }
 }

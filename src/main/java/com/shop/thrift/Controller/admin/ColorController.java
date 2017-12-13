@@ -3,15 +3,13 @@ package com.shop.thrift.Controller.admin;
 
 import com.shop.thrift.Entity.Color;
 import com.shop.thrift.Services.ColorService;
-import com.shop.thrift.Filter.BasicFilter;
-import com.shop.thrift.Validator.ColorValidator;
+import com.shop.thrift.dto.Filter.BasicFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
 

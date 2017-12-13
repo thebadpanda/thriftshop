@@ -1,8 +1,8 @@
 package com.shop.thrift.Services.impl;
 
 import com.shop.thrift.Entity.Item;
-import com.shop.thrift.Filter.ItemFilter;
-import com.shop.thrift.Form.ItemForm;
+import com.shop.thrift.dto.Filter.ItemFilter;
+import com.shop.thrift.dto.Form.ItemForm;
 import com.shop.thrift.Repository.ColorRepository;
 import com.shop.thrift.Repository.ItemRepository;
 import com.shop.thrift.Repository.SizeRepository;
@@ -69,6 +69,20 @@ public class ItemServiceImpl implements ItemService {
         Page<Item> items = itemRepository.findAll(new ItemSpecification(filter),pageable);
         System.out.println("---------------------------------------------------------------");
         return items;
+    }
+
+    @Override
+    public int findCount(int id) {
+        Integer count = itemRepository.findCount(id);
+        if (count == null)
+            return 0;
+        return count;
+    }
+
+
+    @Override
+    public List<Item> findByUsersId(int usersId) {
+        return itemRepository.findByUsersId(usersId);
     }
 
 

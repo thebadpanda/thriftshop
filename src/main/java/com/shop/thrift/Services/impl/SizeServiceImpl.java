@@ -1,7 +1,7 @@
 package com.shop.thrift.Services.impl;
 
 import com.shop.thrift.Entity.Size;
-import com.shop.thrift.Filter.BasicFilter;
+import com.shop.thrift.dto.Filter.BasicFilter;
 import com.shop.thrift.Repository.SizeRepository;
 import com.shop.thrift.Services.SizeService;
 import com.shop.thrift.Specification.SizeSpecification;
@@ -46,6 +46,11 @@ public class SizeServiceImpl implements SizeService {
     @Override
     public Page<Size> findAll(BasicFilter filter, Pageable pageable){
         return sizeRepository.findAll(new SizeSpecification(filter),pageable);
+    }
+
+    @Override
+    public Size findOneByItem(int id) {
+        return sizeRepository.findOneByItem(id);
     }
 
 

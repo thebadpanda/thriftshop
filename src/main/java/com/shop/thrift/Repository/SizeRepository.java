@@ -14,6 +14,9 @@ public interface SizeRepository extends JpaRepository<Size, Integer>, JpaSpecifi
     // v2.Sokol
     Size findBySizeName(String name);
 
+    @Query("SELECT i FROM Size i LEFT JOIN FETCH i.items WHERE i.id = ?1")
+    Size findOneByItem(int id);
+
 
 
 

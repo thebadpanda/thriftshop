@@ -2,7 +2,7 @@ package com.shop.thrift.Validator;
 
 import java.util.regex.Pattern;
 
-import com.shop.thrift.Form.ItemForm;
+import com.shop.thrift.dto.Form.ItemForm;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;

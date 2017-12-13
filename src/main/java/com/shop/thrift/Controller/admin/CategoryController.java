@@ -2,7 +2,7 @@ package com.shop.thrift.Controller.admin;
 
 
 import com.shop.thrift.Entity.Category;
-import com.shop.thrift.Filter.BasicFilter;
+import com.shop.thrift.dto.Filter.BasicFilter;
 import com.shop.thrift.Services.CategoryService;
 import com.shop.thrift.Validator.CategoryValidator;
 

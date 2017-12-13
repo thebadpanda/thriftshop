@@ -1,7 +1,7 @@
 package com.shop.thrift.Services;
 
 import com.shop.thrift.Entity.Color;
-import com.shop.thrift.Filter.BasicFilter;
+import com.shop.thrift.dto.Filter.BasicFilter;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -20,5 +20,7 @@ public interface ColorService {
     void delete(int id);
 
     void save(Color color);
+
+    Color findOneByItem(int id);
 
 }

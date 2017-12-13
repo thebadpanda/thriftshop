@@ -1,4 +1,4 @@
-package com.shop.thrift.Filter;
+package com.shop.thrift.dto.Filter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +21,26 @@ public class ItemFilter {
     private List<Integer> sizeIds = new ArrayList<>();
 
     private List<Integer> colorIds = new ArrayList<>();
+
+    private List<Integer> categoryIds = new ArrayList<>();
+
+    private List<Integer> subcategoryIds = new ArrayList<>();
+
+    public List<Integer> getCategoryIds() {
+        return categoryIds;
+    }
+
+    public List<Integer> getSubcategoryIds() {
+        return subcategoryIds;
+    }
+
+    public void setSubcategoryIds(List<Integer> subcategoryIds) {
+        this.subcategoryIds = subcategoryIds;
+    }
+
+    public void setCategoryIds(List<Integer> categoryIds) {
+        this.categoryIds = categoryIds;
+    }
 
     public static Pattern getPEATTERN() {
         return PEATTERN;

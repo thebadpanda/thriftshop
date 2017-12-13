@@ -1,9 +1,20 @@
 package com.shop.thrift.Entity;
 
-import javax.persistence.*;
-import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.List;
+        import java.math.BigDecimal;
+        import java.util.ArrayList;
+        import java.util.List;
+
+        import javax.persistence.Column;
+        import javax.persistence.Entity;
+        import javax.persistence.FetchType;
+        import javax.persistence.GeneratedValue;
+        import javax.persistence.GenerationType;
+        import javax.persistence.Id;
+        import javax.persistence.JoinColumn;
+        import javax.persistence.JoinTable;
+        import javax.persistence.ManyToMany;
+        import javax.persistence.ManyToOne;
+        import javax.persistence.Table;
 
 @Entity
 @Table(name = "item")
@@ -57,12 +68,12 @@ public class Item {
         this.colorId = colorId;
     }
 
-    public List<Basket> getBasketList() {
-        return basketList;
+    public List<Basket> getBasket() {
+        return basket;
     }
 
-    public void setBasketList(List<Basket> basketList) {
-        this.basketList = basketList;
+    public void setBasket(List<Basket> basket) {
+        this.basket = basket;
     }
 
     private BigDecimal price;
@@ -79,6 +90,30 @@ public class Item {
 
     private int subcategoryId;
 
+
+    //public Category getCategory() {
+      //  return subcategory.getCategory();
+    //}
+//
+//    //TODO:possible error here!
+//    public void setCategory(Category category) {
+//        this.category = category;
+//    }
+//
+//    public int getCategoryId() {
+//        return categoryId;
+//    }
+//
+//    public void setCategoryId(int categoryId) {
+//        this.categoryId = categoryId;
+//    }
+
+    //TODO: delete this segment and getters/setters or add annotations
+
+    //private Category category;
+
+    //private int categoryId;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "color_id")
     private Color color;
@@ -86,8 +121,8 @@ public class Item {
     private int colorId;
 
 
-    @OneToMany(mappedBy = "item")
-    private List<Basket> basketList = new ArrayList<>();
+    @ManyToMany(mappedBy = "item")
+    private List<Basket> basket = new ArrayList<>();
 
 
     public int getSubcategoryId() {

@@ -14,14 +14,15 @@
             </button>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
+                    <li><a href="/">Main</a> </li>
                     <li><a href="/admin/category">Category</a></li>
                     <li><a href="/admin/subcategory">Subcategory</a></li>
+                    <li><a href="/admin/item">Item</a></li>
+                    <li><a href="/admin/color">Color</a></li>
                     <li class="active"><a href="/admin/size">Size</a><span
                             class="sr-only">(current)</span></li>
-                    <li><a href="/admin/color">Color</a></li>
-                    <li><a href="/admin/basket">Basket</a></li>
                     <li><a href="/admin/users">Users</a></li>
-                    <li><a href="/admin/item">Item</a></li>
+                    <li><a href="/admin/basket">Basket</a></li>
                 </ul>
             </div>
         </div>
@@ -85,7 +86,7 @@
                 </div>
             </div>
             <div class="col-md-6 col-xs-6 text-center">
-                <custom:size posibleSizes="1,2,5,10" size="${page.size}" />
+                <custom:size posibleSizes="5,10,25,50" size="${page.size}" />
             </div>
         </div>
     </div>

@@ -1,8 +1,7 @@
 package com.shop.thrift.Controller.admin;
 
-
 import com.shop.thrift.Entity.Users;
-import com.shop.thrift.Filter.BasicFilter;
+import com.shop.thrift.dto.Filter.BasicFilter;
 import com.shop.thrift.Services.UsersService;
 import com.shop.thrift.Validator.UsersValidator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +13,6 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
-
 
 import javax.validation.Valid;
 
@@ -63,13 +61,13 @@ public class UsersController {
         return "admin-users";
     }
 
-    @RequestMapping(method=POST)
+@RequestMapping(method=POST)
     public String save(@ModelAttribute("users") @Valid Users users, SessionStatus status, BindingResult br,
                        Model model, @PageableDefault Pageable pageable, @ModelAttribute("filter")BasicFilter filter){
         if(br.hasErrors()){
             model.addAttribute("page", usersService.findAll(filter, pageable));
             return "admin-users";
-        }
+       }
         usersService.save(users);
         status.setComplete();
         return "redirect:/admin/users/"+getParams(pageable, filter);

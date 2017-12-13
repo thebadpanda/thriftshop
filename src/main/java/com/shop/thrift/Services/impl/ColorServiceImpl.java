@@ -1,7 +1,7 @@
 package com.shop.thrift.Services.impl;
 
 import com.shop.thrift.Entity.Color;
-import com.shop.thrift.Filter.BasicFilter;
+import com.shop.thrift.dto.Filter.BasicFilter;
 import com.shop.thrift.Repository.ColorRepository;
 import com.shop.thrift.Services.ColorService;
 import com.shop.thrift.Specification.ColorSpecification;
@@ -46,6 +46,11 @@ public class ColorServiceImpl implements ColorService {
     @Override
     public Page<Color> findAll(BasicFilter filter, Pageable pageable){
         return colorRepository.findAll(new ColorSpecification(filter),pageable);
+    }
+
+    @Override
+    public Color findOneByItem(int id) {
+        return colorRepository.findOneByItem(id);
     }
 
  }

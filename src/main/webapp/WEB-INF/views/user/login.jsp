@@ -17,12 +17,12 @@
     <div class="row">
         <c:if test="${param.fail}">
             <div class="col-sm-12 col-xs-12 text-center">
-                Fail to authorize
+                Fail to authorize!!!
             </div>
         </c:if>
         <div class="col-md-12"><br></div>
         <div class="col-sm-12 col-xs-12">
-            <form:form class="form-horizontal" action="admin/login" method="POST">
+            <form:form class="form-horizontal" action="/login" method="POST">
                 <div class="form-group">
                     <label for="login" class="col-sm-2 control-label">Логін</label>
                     <div class="col-sm-10">

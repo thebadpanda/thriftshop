@@ -6,8 +6,8 @@ import com.shop.thrift.Editor.SubcategoryEditor;
 import com.shop.thrift.Entity.Color;
 import com.shop.thrift.Entity.Size;
 import com.shop.thrift.Entity.Subcategory;
-import com.shop.thrift.Filter.ItemFilter;
-import com.shop.thrift.Form.ItemForm;
+import com.shop.thrift.dto.Filter.ItemFilter;
+import com.shop.thrift.dto.Form.ItemForm;
 import com.shop.thrift.Services.*;
 import com.shop.thrift.Validator.ItemValidator;
 

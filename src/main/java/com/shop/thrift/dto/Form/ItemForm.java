@@ -1,4 +1,4 @@
-package com.shop.thrift.Form;
+package com.shop.thrift.dto.Form;
 
 import com.shop.thrift.Entity.Color;
 import com.shop.thrift.Entity.Size;

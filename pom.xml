@@ -22,7 +22,7 @@
             <properties>
                 <maven.compiler.source>1.8</maven.compiler.source>
                 <maven.compiler.target>1.8</maven.compiler.target>
-                <springCoreVersion>4.3.1.RELEASE</springCoreVersion>
+                <springCoreVersion>5.3.0.RELEASE</springCoreVersion>
                 <springSecurityVersion>5.4.1</springSecurityVersion>
                 <hibernateVersion>5.2.1.Final</hibernateVersion>
                 <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
